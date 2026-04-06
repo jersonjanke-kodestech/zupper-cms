@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos_api",
+  "info": {
+    "singularName": "produto-api",
+    "pluralName": "produtos-api",
+    "displayName": "Produtos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "text"
+    }
+  }
+}
