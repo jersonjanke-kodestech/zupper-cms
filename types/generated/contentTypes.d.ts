@@ -467,32 +467,98 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiProdutoApiProdutoApi extends Struct.CollectionTypeSchema {
-  collectionName: 'produtos_api';
+export interface ApiAtracaoAtracao extends Struct.CollectionTypeSchema {
+  collectionName: 'atracoes';
   info: {
-    displayName: 'Produtos';
-    pluralName: 'produtos-api';
-    singularName: 'produto-api';
+    description: 'Atra\u00E7\u00F5es tur\u00EDsticas dos destinos';
+    displayName: 'Atra\u00E7\u00E3o';
+    pluralName: 'atracoes';
+    singularName: 'atracao';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    categoria: Schema.Attribute.Enumeration<
+      [
+        'parque',
+        'museu',
+        'gastronomia',
+        'historico',
+        'natureza',
+        'entretenimento',
+        'compras',
+        'religioso',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    descricao: Schema.Attribute.Text;
+    descricao: Schema.Attribute.RichText & Schema.Attribute.Required;
+    destino: Schema.Attribute.Relation<'manyToOne', 'api::destino.destino'>;
+    imagem: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::produto-api.produto-api'
+      'api::atracao.atracao'
     > &
       Schema.Attribute.Private;
+    nome: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    titulo: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'nome'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDestinoDestino extends Struct.CollectionTypeSchema {
+  collectionName: 'destinos';
+  info: {
+    description: 'Guia de destinos de viagem';
+    displayName: 'Destino';
+    pluralName: 'destinos';
+    singularName: 'destino';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aeroporto: Schema.Attribute.String;
+    alta_temporada: Schema.Attribute.String;
+    atracoes: Schema.Attribute.Relation<'oneToMany', 'api::atracao.atracao'>;
+    como_chegar: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao_geral: Schema.Attribute.RichText & Schema.Attribute.Required;
+    estado: Schema.Attribute.String & Schema.Attribute.Required;
+    fuso_horario: Schema.Attribute.String;
+    imagem_capa: Schema.Attribute.Media<'images'>;
+    imagens: Schema.Attribute.Media<'images', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::destino.destino'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String & Schema.Attribute.Required;
+    o_que_fazer: Schema.Attribute.RichText;
+    onde_ficar: Schema.Attribute.RichText;
+    publishedAt: Schema.Attribute.DateTime;
+    quando_ir: Schema.Attribute.RichText;
+    regiao: Schema.Attribute.Enumeration<
+      ['norte', 'nordeste', 'sul', 'sudeste', 'centro-oeste', 'exterior']
+    > &
+      Schema.Attribute.Required;
+    seo_description: Schema.Attribute.Text;
+    seo_title: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'nome'> & Schema.Attribute.Required;
+    slug_estado: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    voltagem: Schema.Attribute.String;
   };
 }
 
@@ -1008,7 +1074,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::produto-api.produto-api': ApiProdutoApiProdutoApi;
+      'api::atracao.atracao': ApiAtracaoAtracao;
+      'api::destino.destino': ApiDestinoDestino;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
