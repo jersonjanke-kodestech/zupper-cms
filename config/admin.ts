@@ -33,7 +33,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => 
   preview: {
     enabled: true,
     config: {
-      allowedOrigins: env('CLIENT_URL'),
+      allowedOrigins: [env('CLIENT_URL')],
       async handler(uid, { documentId, locale, status }) {
         const document = await strapi.documents(uid as any).findOne({ documentId });
         if (!document) return null;
