@@ -22,6 +22,10 @@ const config: Core.Config.Middlewares = [
             'blob:',
             `https://${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com`,
           ],
+          'frame-src': [
+            "'self'",
+            process.env.CLIENT_URL,
+          ],
           upgradeInsecureRequests: null,
         },
       },
