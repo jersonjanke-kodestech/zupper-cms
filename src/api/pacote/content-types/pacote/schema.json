@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pacotes",
+  "info": {
+    "singularName": "pacote",
+    "pluralName": "pacotes",
+    "displayName": "Pacote",
+    "description": "Pacotes combinando passagem + hotel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "passagem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::passagem.passagem",
+      "inversedBy": "pacotes"
+    },
+    "hotel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hotel.hotel",
+      "inversedBy": "pacotes"
+    },
+    "numero_noites": {
+      "type": "integer",
+      "required": true
+    },
+    "preco_total": {
+      "type": "decimal",
+      "required": true
+    },
+    "preco_original": {
+      "type": "decimal"
+    },
+    "destaque": {
+      "type": "boolean",
+      "default": false
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "imagem_capa": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "descricao": {
+      "type": "richtext"
+    }
+  }
+}

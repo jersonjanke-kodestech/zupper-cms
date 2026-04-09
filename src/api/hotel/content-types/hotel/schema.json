@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hoteis",
+  "info": {
+    "singularName": "hotel",
+    "pluralName": "hoteis",
+    "displayName": "Hotel",
+    "description": "Acomodações nos destinos de viagem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome",
+      "required": true
+    },
+    "destino": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::destino.destino",
+      "inversedBy": "hoteis"
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "estrela_1",
+        "estrela_2",
+        "estrela_3",
+        "estrela_4",
+        "estrela_5"
+      ],
+      "required": true,
+      "default": "estrela_3"
+    },
+    "regime": {
+      "type": "enumeration",
+      "enum": [
+        "so_hotel",
+        "meia_pensao",
+        "pensao_completa",
+        "all_inclusive"
+      ],
+      "required": true,
+      "default": "so_hotel"
+    },
+    "preco_por_noite": {
+      "type": "decimal",
+      "required": true
+    },
+    "inclui_cafe": {
+      "type": "boolean",
+      "default": false
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "imagens": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imagem_capa": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "pacotes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pacote.pacote",
+      "mappedBy": "hotel"
+    }
+  }
+}

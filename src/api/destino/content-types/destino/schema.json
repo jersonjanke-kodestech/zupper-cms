@@ -87,11 +87,45 @@
     "seo_description": {
       "type": "text"
     },
+    "codigo": {
+      "type": "string"
+    },
+    "pais": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "aeroporto",
+        "rodoviaria",
+        "porto",
+        "cidade"
+      ],
+      "default": "cidade"
+    },
     "atracoes": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::atracao.atracao",
       "mappedBy": "destino"
+    },
+    "hoteis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hotel.hotel",
+      "mappedBy": "destino"
+    },
+    "passagens_origem": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::passagem.passagem",
+      "mappedBy": "origem"
+    },
+    "passagens_destino": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::passagem.passagem",
+      "mappedBy": "destino_passagem"
     }
   }
 }

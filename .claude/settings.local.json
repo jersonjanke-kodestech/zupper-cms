@@ -3,7 +3,11 @@
     "allow": [
       "WebFetch(domain:docs.strapi.io)",
       "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config:*)",
+      "Bash(mkdir -p c:/Users/jerso/Documents/Repos/zupper/zupper-cms/src/api/companhia/content-types/companhia)",
+      "Bash(mkdir -p c:/Users/jerso/Documents/Repos/zupper/zupper-cms/src/api/companhia/controllers)",
+      "Bash(mkdir -p c:/Users/jerso/Documents/Repos/zupper/zupper-cms/src/api/companhia/routes)",
+      "Bash(mkdir -p c:/Users/jerso/Documents/Repos/zupper/zupper-cms/src/api/companhia/services)"
     ]
   }
 }

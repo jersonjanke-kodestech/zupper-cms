@@ -35,11 +35,8 @@ async function triggerRevalidation(slug?: string) {
 }
 
 export default {
-  async afterPublish(event: any) {
-    await triggerRevalidation(event.result?.slug);
-  },
-
-  async afterUnpublish(event: any) {
+  async afterUpdate(event: any) {
+    // Captura publish e unpublish (publishedAt muda) e edições normais
     await triggerRevalidation(event.result?.slug);
   },
 
