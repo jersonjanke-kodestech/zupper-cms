@@ -28,16 +28,10 @@
       "inversedBy": "passagens"
     },
     "origem": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::destino.destino",
-      "inversedBy": "passagens_origem"
+      "type": "string"
     },
     "destino_passagem": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::destino.destino",
-      "inversedBy": "passagens_destino"
+      "type": "string"
     },
     "data_ida": {
       "type": "datetime",

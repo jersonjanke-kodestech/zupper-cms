@@ -43,12 +43,6 @@
         "compras",
         "religioso"
       ]
-    },
-    "destino": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::destino.destino",
-      "inversedBy": "atracoes"
     }
   }
 }

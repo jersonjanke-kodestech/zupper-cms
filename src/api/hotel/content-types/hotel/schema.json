@@ -21,12 +21,6 @@
       "targetField": "nome",
       "required": true
     },
-    "destino": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::destino.destino",
-      "inversedBy": "hoteis"
-    },
     "categoria": {
       "type": "enumeration",
       "enum": [
