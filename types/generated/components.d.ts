@@ -76,6 +76,22 @@ export interface ComponentesPrincipal extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'SEO';
+    icon: 'search';
+  };
+  attributes: {
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metaImage: Schema.Attribute.Media<'images'>;
+    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    noIndex: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -85,6 +101,7 @@ declare module '@strapi/strapi' {
       'componentes.icones': ComponentesIcones;
       'componentes.informacoes': ComponentesInformacoes;
       'componentes.principal': ComponentesPrincipal;
+      'shared.seo': SharedSeo;
     }
   }
 }

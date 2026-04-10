@@ -11,6 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
     "Secoes": {
       "type": "dynamiczone",
       "components": [

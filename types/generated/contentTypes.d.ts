@@ -487,6 +487,7 @@ export interface ApiDestinoDestino extends Struct.CollectionTypeSchema {
       'api::destino.destino'
     > &
       Schema.Attribute.Private;
+    nome: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Secoes: Schema.Attribute.DynamicZone<
       [
@@ -497,6 +498,8 @@ export interface ApiDestinoDestino extends Struct.CollectionTypeSchema {
         'componentes.dicas',
       ]
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'nome'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
