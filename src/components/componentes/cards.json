@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_componentes_cards",
+  "info": {
+    "displayName": "Cards",
+    "icon": "train"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Descricao": {
+      "type": "blocks"
+    },
+    "Imagem": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

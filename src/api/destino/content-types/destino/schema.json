@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "destinos",
+  "info": {
+    "singularName": "destino",
+    "pluralName": "destinos",
+    "displayName": "Destino"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Secoes": {
+      "type": "dynamiczone",
+      "components": [
+        "componentes.principal",
+        "componentes.cards",
+        "componentes.icones",
+        "componentes.informacoes",
+        "componentes.dicas"
+      ]
+    }
+  }
+}

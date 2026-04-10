@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_componentes_informacoes",
+  "info": {
+    "displayName": "Informacoes",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "TItulo": {
+      "type": "string"
+    },
+    "Descricao": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

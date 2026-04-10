@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_componentes_dica_items",
+  "info": {
+    "displayName": "Dica Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Item": {
+      "type": "string"
+    },
+    "ItemTitulo": {
+      "type": "string"
+    },
+    "ItemDescricao": {
+      "type": "blocks"
+    }
+  }
+}
