@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_componentes_informacoes",
+  "collectionName": "components_componentes_informacao_items",
   "info": {
-    "displayName": "Informacoes",
+    "displayName": "Informacao Item",
     "icon": "information"
   },
   "options": {},
@@ -12,6 +12,5 @@
     "Descricao": {
       "type": "blocks"
     }
-  },
-  "config": {}
+  }
 }

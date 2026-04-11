@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_componentes_icone_items",
+  "info": {
+    "displayName": "Icone Item",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "icone": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "Titulo": {
+      "type": "string"
+    },
+    "Descricao": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_componentes_principals",
+  "collectionName": "components_secoes_secao_principal",
   "info": {
-    "displayName": "Principal",
+    "displayName": "Seção Principal",
     "icon": "code"
   },
   "options": {},
@@ -15,6 +15,5 @@
     "Descricao": {
       "type": "blocks"
     }
-  },
-  "config": {}
+  }
 }

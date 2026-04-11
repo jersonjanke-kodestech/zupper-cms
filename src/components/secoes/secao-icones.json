@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_secoes_secao_icones",
+  "info": {
+    "displayName": "Seção Ícones",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "Itens": {
+      "type": "component",
+      "component": "componentes.icone-item",
+      "repeatable": true
+    }
+  }
+}

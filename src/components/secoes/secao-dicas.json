@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_secoes_secao_dicas",
+  "info": {
+    "displayName": "Seção Dicas",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Imagem": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "Itens": {
+      "type": "component",
+      "component": "componentes.dica-item",
+      "repeatable": true
+    }
+  }
+}

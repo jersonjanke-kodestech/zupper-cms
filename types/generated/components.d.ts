@@ -1,14 +1,14 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ComponentesCards extends Struct.ComponentSchema {
-  collectionName: 'components_componentes_cards';
+export interface ComponentesCardItem extends Struct.ComponentSchema {
+  collectionName: 'components_componentes_card_items';
   info: {
-    displayName: 'Cards';
+    displayName: 'Card Item';
     icon: 'train';
   };
   attributes: {
     Descricao: Schema.Attribute.Blocks;
-    Imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Imagem: Schema.Attribute.Media<'images'>;
     Titulo: Schema.Attribute.String;
   };
 }
@@ -26,35 +26,23 @@ export interface ComponentesDicaItem extends Struct.ComponentSchema {
   };
 }
 
-export interface ComponentesDicas extends Struct.ComponentSchema {
-  collectionName: 'components_componentes_dicas';
+export interface ComponentesIconeItem extends Struct.ComponentSchema {
+  collectionName: 'components_componentes_icone_items';
   info: {
-    displayName: 'Dicas';
-  };
-  attributes: {
-    Imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Itens: Schema.Attribute.Component<'componentes.dica-item', true>;
-    Titulo: Schema.Attribute.String;
-  };
-}
-
-export interface ComponentesIcones extends Struct.ComponentSchema {
-  collectionName: 'components_componentes_icones';
-  info: {
-    displayName: 'Icones';
-    icon: 'write';
+    displayName: 'Icone Item';
+    icon: 'star';
   };
   attributes: {
     Descricao: Schema.Attribute.Blocks;
-    icone: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    icone: Schema.Attribute.Media<'images'>;
     Titulo: Schema.Attribute.String;
   };
 }
 
-export interface ComponentesInformacoes extends Struct.ComponentSchema {
-  collectionName: 'components_componentes_informacoes';
+export interface ComponentesInformacaoItem extends Struct.ComponentSchema {
+  collectionName: 'components_componentes_informacao_items';
   info: {
-    displayName: 'Informacoes';
+    displayName: 'Informacao Item';
     icon: 'information';
   };
   attributes: {
@@ -63,10 +51,58 @@ export interface ComponentesInformacoes extends Struct.ComponentSchema {
   };
 }
 
-export interface ComponentesPrincipal extends Struct.ComponentSchema {
-  collectionName: 'components_componentes_principals';
+export interface SecoesSecaoCards extends Struct.ComponentSchema {
+  collectionName: 'components_secoes_secao_cards';
   info: {
-    displayName: 'Principal';
+    displayName: 'Se\u00E7\u00E3o Cards';
+    icon: 'layout';
+  };
+  attributes: {
+    Itens: Schema.Attribute.Component<'componentes.card-item', true>;
+    Titulo: Schema.Attribute.String;
+  };
+}
+
+export interface SecoesSecaoDicas extends Struct.ComponentSchema {
+  collectionName: 'components_secoes_secao_dicas';
+  info: {
+    displayName: 'Se\u00E7\u00E3o Dicas';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Imagem: Schema.Attribute.Media<'images'>;
+    Itens: Schema.Attribute.Component<'componentes.dica-item', true>;
+    Titulo: Schema.Attribute.String;
+  };
+}
+
+export interface SecoesSecaoIcones extends Struct.ComponentSchema {
+  collectionName: 'components_secoes_secao_icones';
+  info: {
+    displayName: 'Se\u00E7\u00E3o \u00CDcones';
+    icon: 'information';
+  };
+  attributes: {
+    Itens: Schema.Attribute.Component<'componentes.icone-item', true>;
+  };
+}
+
+export interface SecoesSecaoInformacoes extends Struct.ComponentSchema {
+  collectionName: 'components_secoes_secao_informacoes';
+  info: {
+    displayName: 'Se\u00E7\u00E3o Informa\u00E7\u00F5es';
+    icon: 'file';
+  };
+  attributes: {
+    Itens: Schema.Attribute.Component<'componentes.informacao-item', true>;
+    Titulo: Schema.Attribute.String;
+  };
+}
+
+export interface SecoesSecaoPrincipal extends Struct.ComponentSchema {
+  collectionName: 'components_secoes_secao_principal';
+  info: {
+    displayName: 'Se\u00E7\u00E3o Principal';
     icon: 'code';
   };
   attributes: {
@@ -95,12 +131,15 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'componentes.cards': ComponentesCards;
+      'componentes.card-item': ComponentesCardItem;
       'componentes.dica-item': ComponentesDicaItem;
-      'componentes.dicas': ComponentesDicas;
-      'componentes.icones': ComponentesIcones;
-      'componentes.informacoes': ComponentesInformacoes;
-      'componentes.principal': ComponentesPrincipal;
+      'componentes.icone-item': ComponentesIconeItem;
+      'componentes.informacao-item': ComponentesInformacaoItem;
+      'secoes.secao-cards': SecoesSecaoCards;
+      'secoes.secao-dicas': SecoesSecaoDicas;
+      'secoes.secao-icones': SecoesSecaoIcones;
+      'secoes.secao-informacoes': SecoesSecaoInformacoes;
+      'secoes.secao-principal': SecoesSecaoPrincipal;
       'shared.seo': SharedSeo;
     }
   }

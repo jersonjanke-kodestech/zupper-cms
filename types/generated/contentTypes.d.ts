@@ -491,11 +491,11 @@ export interface ApiDestinoDestino extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Secoes: Schema.Attribute.DynamicZone<
       [
-        'componentes.principal',
-        'componentes.cards',
-        'componentes.icones',
-        'componentes.informacoes',
-        'componentes.dicas',
+        'secoes.secao-principal',
+        'secoes.secao-cards',
+        'secoes.secao-icones',
+        'secoes.secao-informacoes',
+        'secoes.secao-dicas',
       ]
     >;
     seo: Schema.Attribute.Component<'shared.seo', false>;

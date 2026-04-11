@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
     "nome": {
       "type": "string",
       "required": true
@@ -20,19 +25,14 @@
       "targetField": "nome",
       "required": true
     },
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "repeatable": false
-    },
     "Secoes": {
       "type": "dynamiczone",
       "components": [
-        "componentes.principal",
-        "componentes.cards",
-        "componentes.icones",
-        "componentes.informacoes",
-        "componentes.dicas"
+        "secoes.secao-principal",
+        "secoes.secao-cards",
+        "secoes.secao-icones",
+        "secoes.secao-informacoes",
+        "secoes.secao-dicas"
       ]
     }
   }
