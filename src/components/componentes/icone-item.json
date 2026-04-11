@@ -6,16 +6,18 @@
   },
   "options": {},
   "attributes": {
-    "icone": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
-    },
     "Titulo": {
       "type": "string"
     },
     "Descricao": {
       "type": "blocks"
+    },
+    "icone": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

@@ -95,7 +95,6 @@ export interface SecoesSecaoInformacoes extends Struct.ComponentSchema {
   };
   attributes: {
     Itens: Schema.Attribute.Component<'componentes.informacao-item', true>;
-    Titulo: Schema.Attribute.String;
   };
 }
 
@@ -107,6 +106,7 @@ export interface SecoesSecaoPrincipal extends Struct.ComponentSchema {
   };
   attributes: {
     Descricao: Schema.Attribute.Blocks;
+    Imagem: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Titulo: Schema.Attribute.String;
     TituloAuxiliar: Schema.Attribute.String;
   };

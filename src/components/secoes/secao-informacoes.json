@@ -6,9 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "Titulo": {
-      "type": "string"
-    },
     "Itens": {
       "type": "component",
       "component": "componentes.informacao-item",

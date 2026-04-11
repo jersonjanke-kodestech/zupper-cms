@@ -38,6 +38,7 @@ const config: Core.Config.Middlewares = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  'global::absolute-urls',
 ];
 
 export default config;
