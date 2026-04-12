@@ -10,13 +10,23 @@ const config = ({
     env("AWS_REGION")
   );
 
+  const uploadBase = {
+    sizeOptimization: false,
+    responsiveDimensions: false,
+  };
+
   if (!useS3) {
-    return {};
+    return {
+      upload: {
+        config: uploadBase,
+      },
+    };
   }
 
   return {
     upload: {
       config: {
+        ...uploadBase,
         provider: "@strapi/provider-upload-aws-s3",
         providerOptions: {
           s3Options: {
