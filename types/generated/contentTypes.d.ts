@@ -964,6 +964,11 @@ export interface PluginUsersPermissionsUser
     draftAndPublish: false;
     timestamps: true;
   };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+  };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
