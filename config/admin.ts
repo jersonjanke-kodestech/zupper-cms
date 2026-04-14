@@ -1,14 +1,10 @@
 import type { Core } from '@strapi/strapi';
 
 const getPreviewPathname = (uid: string, { document }: { locale?: string; document: Record<string, any> }): string | null => {
-  switch (uid) {
-    case 'api::destino.destino':
-      return `/destinos/${document.slug}`;
-    case 'api::atracao.atracao':
-      return `/atracoes/${document.slug}`;
-    default:
-      return null;
+  if (uid === 'api::destino.destino') {
+    return `/destinos/${document.slug}`;
   }
+  return null;
 };
 
 const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Admin => ({
