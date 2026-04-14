@@ -25,6 +25,11 @@
       "targetField": "nome",
       "required": true
     },
+    "imagemFiltro": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "Secoes": {
       "type": "dynamiczone",
       "components": [
