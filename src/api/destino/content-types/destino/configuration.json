@@ -1,0 +1,43 @@
+{
+  "settings": {
+    "bulkable": true,
+    "filterable": true,
+    "searchable": true,
+    "pageSize": 10,
+    "mainField": "nome",
+    "defaultSortBy": "nome",
+    "defaultSortOrder": "ASC"
+  },
+  "metadatas": {
+    "id": { "edit": {}, "list": { "label": "Id", "searchable": true, "sortable": true } },
+    "nome": {
+      "edit": { "label": "Nome", "description": "", "placeholder": "", "visible": true, "editable": true },
+      "list": { "label": "Nome", "searchable": true, "sortable": true }
+    },
+    "slug": {
+      "edit": { "label": "Slug", "description": "", "placeholder": "", "visible": true, "editable": true },
+      "list": { "label": "Slug", "searchable": true, "sortable": true }
+    },
+    "imagemFiltro": {
+      "edit": { "label": "Imagem Filtro", "description": "", "placeholder": "", "visible": true, "editable": true },
+      "list": { "label": "Imagem Filtro", "searchable": false, "sortable": false }
+    },
+    "seo": {
+      "edit": { "label": "SEO", "description": "", "placeholder": "", "visible": true, "editable": true },
+      "list": { "label": "SEO", "searchable": false, "sortable": false }
+    },
+    "Secoes": {
+      "edit": { "label": "Seções", "description": "", "placeholder": "", "visible": true, "editable": true },
+      "list": { "label": "Seções", "searchable": false, "sortable": false }
+    }
+  },
+  "layouts": {
+    "list": ["nome", "slug", "updatedAt"],
+    "edit": [
+      [{ "name": "nome", "size": 6 }, { "name": "slug", "size": 6 }],
+      [{ "name": "imagemFiltro", "size": 6 }],
+      [{ "name": "seo", "size": 12 }],
+      [{ "name": "Secoes", "size": 12 }]
+    ]
+  }
+}

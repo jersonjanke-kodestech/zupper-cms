@@ -6,13 +6,15 @@
   },
   "options": {},
   "attributes": {
-    "Titulo": {
-      "type": "string"
-    },
     "Imagem": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Titulo": {
+      "type": "string"
     },
     "Itens": {
       "type": "component",
